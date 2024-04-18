@@ -1,4 +1,4 @@
-import 'package:hive_project/db/induvidual_bar.dart';
+import 'package:tempus/db/induvidual_bar.dart';
 
 class BarData {
   final double sunday;

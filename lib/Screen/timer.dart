@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
-import 'package:hive_project/Design/colors.dart';
-import 'package:hive_project/Design/styles.dart';
+import 'package:tempus/Design/colors.dart';
+import 'package:tempus/Design/styles.dart';
 
 class TimerWidget extends StatefulWidget {
   final Duration duration;

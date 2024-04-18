@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:uuid/uuid.dart';
-import 'package:hive_project/Screen/calender.dart';
-import 'package:hive_project/Screen/home.dart';
-import 'package:hive_project/Screen/progress.dart';
 
-import 'package:hive_project/Screen/schedule.dart';
-import 'package:hive_project/Screen/search.dart';
-import 'package:hive_project/Screen/splash.dart';
+import 'package:tempus/Screen/calender.dart';
+import 'package:tempus/Screen/home.dart';
+import 'package:tempus/Screen/progress.dart';
+
+import 'package:tempus/Screen/schedule.dart';
+import 'package:tempus/Screen/search.dart';
+import 'package:tempus/Screen/splash.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:hive_project/Screen/timer.dart';
-import 'package:hive_project/db/model.dart';
-import 'package:hive_project/db/eventmodel.dart';
-import 'package:hive_project/db/radio.dart';
+import 'package:tempus/Screen/timer.dart';
+import 'package:tempus/db/model.dart';
+import 'package:tempus/db/eventmodel.dart';
+import 'package:tempus/db/radio.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
 import 'package:path_provider/path_provider.dart';
-import 'package:hive_project/db/pdf.dart';
-import 'package:hive_project/Screen/pdfpage.dart';
+import 'package:tempus/db/pdf.dart';
+import 'package:tempus/Screen/pdfpage.dart';
 
 FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
@@ -76,8 +76,7 @@ void main() async {
       Event? desiredEvent = getEventByUUID(desiredUUID);
       Radio1 desiredradio1 = getradioId(desiredRadioId);
       DateTime notificationclickedTime = DateTime.now();
-      print(' start is ${desiredEvent.startingTime}');
-      print('end is ${desiredEvent.endingTime}');
+     
       Duration time =
           desiredEvent.endingTime.difference(desiredEvent.startingTime);
       Duration timeforPlay =
@@ -85,11 +84,8 @@ void main() async {
               ? notificationclickedTime.difference(desiredEvent.endingTime)
               : desiredEvent.endingTime.difference(notificationclickedTime);
 
-      int timeforPlayinSec = timeforPlay.inSeconds;
-      print(timeforPlayinSec);
-      int timeinSec = time.inSeconds;
-      print(timeinSec);
-      print(desiredradio1.selectedOption);
+   
+    
 
       if (desiredradio1.selectedOption == false) {
         Navigator.push(
@@ -145,7 +141,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    // TODO: implement initState
+  
 
     super.initState();
   }
@@ -178,7 +174,7 @@ class _MyWidgetState extends State<NavPage> {
     const Icon(Icons.document_scanner_outlined)
   ];
   List<Widget> screens = [
-    const schedule(),
+    const Schedule(),
     const Home(),
     const Search(),
     const Calender(),

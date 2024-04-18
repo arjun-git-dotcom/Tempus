@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:hive_project/Design/colors.dart';
-import 'package:hive_project/Design/fonts.dart';
-import 'package:hive_project/Design/gradient.dart';
-import 'package:hive_project/Design/styles.dart';
-import 'package:hive_project/db/eventmodel.dart';
-import 'package:hive_project/db/model.dart';
+import 'package:tempus/Design/colors.dart';
+import 'package:tempus/Design/fonts.dart';
+import 'package:tempus/Design/gradient.dart';
+
+import 'package:tempus/db/eventmodel.dart';
+import 'package:tempus/db/model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:hive_project/db/bar_data.dart';
+
 import 'package:fl_chart/fl_chart.dart';
 
 class Progress extends StatefulWidget {

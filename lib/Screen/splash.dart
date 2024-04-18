@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hive_project/Design/colors.dart';
-import 'package:hive_project/main.dart';
+import 'package:tempus/Design/colors.dart';
+import 'package:tempus/main.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatelessWidget {

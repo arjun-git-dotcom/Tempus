@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:hive_project/Design/colors.dart';
-import 'package:hive_project/Design/gradient.dart';
-import 'package:hive_project/db/pdf.dart';
+import 'package:tempus/Design/colors.dart';
+import 'package:tempus/Design/gradient.dart';
+import 'package:tempus/db/pdf.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
-import 'package:hive_project/db/eventmodel.dart';
+import 'package:tempus/db/eventmodel.dart';
 
 class PdfPage extends StatefulWidget {
   const PdfPage({super.key});
@@ -27,7 +27,7 @@ class _MyWidgetState extends State<PdfPage> {
 
   Future<void> _openBox() async {
     _pdfBox = await Hive.openBox<PDFDocument>('pdf_box');
-    calenderbox = await Hive.box<Event>('calenderbox');
+    calenderbox = Hive.box<Event>('calenderbox');
     setState(() {
       _isLoading = false;
     });
@@ -57,14 +57,20 @@ class _MyWidgetState extends State<PdfPage> {
                 });
               }
             },
-            icon:  Icon(Icons.search,color: AppColors.white(),),
+            icon: Icon(
+              Icons.search,
+              color: AppColors.white(),
+            ),
           ),
         ],
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _pdfBox.isEmpty
-              ? Container(decoration: BoxDecoration(gradient: AppGradient.calenderGradient()),       child: const Center(child: Text('No PDF documents found')))
+              ? Container(
+                  decoration:
+                      BoxDecoration(gradient: AppGradient.calenderGradient()),
+                  child: const Center(child: Text('No PDF documents found')))
               : Container(
                   decoration:
                       BoxDecoration(gradient: AppGradient.calenderGradient()),
@@ -72,22 +78,21 @@ class _MyWidgetState extends State<PdfPage> {
                     itemCount: _pdfBox.length,
                     itemBuilder: (context, index) {
                       final document = _pdfBox.getAt(index)!;
-                   
-    
+
                       if (_searchText.isNotEmpty &&
                           !document.name
                               .toLowerCase()
                               .contains(_searchText.toLowerCase())) {
                         return const SizedBox.shrink();
                       }
-    
+
                       return ListTile(
-                        title: Text(
-                          
-                               " ${document.name}",
-                           
-                          style: TextStyle(color: AppColors.blue()),
-                        ),
+                        title: document.name.isNotEmpty
+                            ? Text(
+                                " ${document.name}",
+                                style: TextStyle(color: AppColors.blue()),
+                              )
+                            :  Text('Pdf name unavailable',style: TextStyle(color: AppColors.blue()),),
                         onTap: () => _openPDF(document.path),
                       );
                     },
@@ -101,6 +106,11 @@ class _MyWidgetState extends State<PdfPage> {
       context,
       MaterialPageRoute(builder: (context) => PDFView(filePath: path)),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 }
 
@@ -151,7 +161,7 @@ class PdfSearchDelegate extends SearchDelegate<String> {
         final suggestion = suggestions[index];
 
         return ListTile(
-          title: Text( suggestion),
+          title: Text(suggestion),
           onTap: () {
             query = suggestion;
             close(context, query);

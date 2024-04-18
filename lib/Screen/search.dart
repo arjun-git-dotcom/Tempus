@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hive_project/db/eventmodel.dart';
+
 import 'package:intl/intl.dart';
-import 'package:hive_project/Design/colors.dart';
-import 'package:hive_project/Design/fonts.dart';
+import 'package:tempus/Design/colors.dart';
+import 'package:tempus/Design/fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:hive_project/db/model.dart';
+import 'package:tempus/db/model.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});

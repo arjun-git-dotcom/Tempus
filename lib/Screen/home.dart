@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hive_project/Design/colors.dart';
+import 'package:tempus/Design/colors.dart';
 import 'dart:async';
 
-import 'package:hive_project/Design/styles.dart';
+import 'package:tempus/Design/styles.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'package:hive_project/Screen/termsofuse.dart';
+import 'package:tempus/Screen/termsofuse.dart';
 
-import 'package:hive_project/db/model.dart';
+import 'package:tempus/db/model.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 
 class Home extends StatefulWidget {

@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
+
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:hive_project/Design/colors.dart';
-import 'package:hive_project/Design/fonts.dart';
-import 'package:hive_project/Screen/home.dart';
-import 'package:hive_project/Screen/timer.dart';
-import 'package:hive_project/db/eventmodel.dart';
-import 'package:hive_project/db/model.dart';
-import 'package:hive_project/db/radio.dart';
-import 'package:hive_project/main.dart';
+import 'package:tempus/Design/colors.dart';
+import 'package:tempus/Design/fonts.dart';
+
+import 'package:tempus/db/eventmodel.dart';
+import 'package:tempus/db/model.dart';
+import 'package:tempus/db/radio.dart';
+import 'package:tempus/main.dart';
 import 'package:intl/intl.dart';
 
-class schedule extends StatefulWidget {
-  const schedule({super.key});
+class Schedule extends StatefulWidget {
+  const Schedule({super.key});
 
   @override
-  State<schedule> createState() => _MyWidgetState();
+  State<Schedule> createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<schedule> {
+class _MyWidgetState extends State<Schedule> {
   late Box<Event> calenderbox;
   late Box<Model> homebox;
   late Box<Radio1> radiobox;
@@ -26,7 +25,7 @@ class _MyWidgetState extends State<schedule> {
 
   @override
   void initState() {
-    // TODO: implement initState
+  
     super.initState();
     calenderbox = Hive.box<Event>('calenderbox');
     homebox = Hive.box<Model>('homebox');
