@@ -1,16 +1,45 @@
-# hive_project
+# ⏱️ Tempus — Your Personal Productivity Companion
 
-A new Flutter project.
+Tempus is a Flutter-based productivity app designed to help you stay focused and efficient through timers, PDF uploads, and performance tracking. It uses **Hive** as a lightweight local database.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Key Features
 
-A few resources to get you started if this is your first Flutter project:
+- **Manual & Scheduled Timers**  
+  ⏲️ Start quick timers or set up schedules to match your workflow and stay on track.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **PDF Uploads & Organization**  
+  📄 Add, view, and categorize PDFs — ideal for reference, study or documentation purposes.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Performance Insights**  
+  📊 Visualize your productivity over time with charts and detailed statistics.
+
+- **Local Storage with Hive**  
+  🧩 Fast, secure, and offline data storage using **Hive**, with no heavy database setup.
+
+---
+
+## 📱 Why Use Tempus?
+
+- Eliminate distractions with focused timer sessions  
+- Keep all your PDFs at your fingertips  
+- Understand your work patterns with actionable insights
+
+---
+
+## 🔧 Tech Stack
+
+- **Flutter & Dart** – Cross-platform mobile UI  
+- **Hive** – Lightweight local NoSQL storage  
+- **charts_flutter** (or similar) – Performance graphs  
+- **path_provider** – PDF file access and handling
+
+---
+
+## 🛠️ Installation & Setup
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/tempus.git
+   cd tempus
